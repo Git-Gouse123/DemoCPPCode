@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage('Clone Project') {
             steps {
-                // Clone your project repository
-                git 'https://github.com/Git-Gouse123/DemoCPPCode.git'
+                // Add the withCredentials block with the credentials ID
+            withCredentials([string(credentialsId: 'Git', variable: 'GIT_CREDENTIALS')]) {
+                git url: 'https://github.com/Git-Gouse123/DemoCPPCode.git',
+                    credentialsId: 'Git'
             }
         }
 
