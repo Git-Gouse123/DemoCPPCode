@@ -9,6 +9,7 @@ pipeline {
                 git url: 'https://github.com/Git-Gouse123/DemoCPPCode.git',
                     credentialsId: 'Git'
             }
+			}
         }
 
         stage('Pre-build checks') {
