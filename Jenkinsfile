@@ -5,9 +5,9 @@ pipeline {
         stage('Clone Project') {
             steps {
                 // Add the withCredentials block with the credentials ID
-            withCredentials([string(credentialsId: 'Git', variable: 'GIT_CREDENTIALS')]) {
+            withCredentials([string(credentialsId: 'Git_ID', variable: 'GIT_CREDENTIALS')]) {
                 git url: 'https://github.com/Git-Gouse123/DemoCPPCode.git',
-                    credentialsId: 'Git'
+                    credentialsId: 'Git_ID'
             }
 			}
         }
